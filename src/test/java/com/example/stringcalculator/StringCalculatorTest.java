@@ -9,7 +9,12 @@ public class StringCalculatorTest {
     @Test
     void returnZeroForEmptyString() {
         int result = StringCalculator.add("");
-
         assertThat(result).isEqualTo(0);
+    }
+
+    @Test
+    void returnOneWithOneAsInput() {
+        int result = StringCalculator.add("1");
+        assertThat(result).isEqualTo(1);
     }
 }
