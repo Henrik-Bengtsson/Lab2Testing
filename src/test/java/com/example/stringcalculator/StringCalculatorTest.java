@@ -23,4 +23,10 @@ public class StringCalculatorTest {
         int result = StringCalculator.add("1,2");
         assertThat(result).isEqualTo(3);
     }
+
+    @Test
+    void returnNineWithFourAndFiveAsInput() {
+        int result = StringCalculator.add("4,5");
+        assertThat(result).isEqualTo(9);
+    }
 }
