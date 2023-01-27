@@ -17,4 +17,10 @@ public class StringCalculatorTest {
         int result = StringCalculator.add("1");
         assertThat(result).isEqualTo(1);
     }
+
+    @Test
+    void returnThreeWithOneAndTwoAsInput() {
+        int result = StringCalculator.add("1,2");
+        assertThat(result).isEqualTo(3);
+    }
 }
