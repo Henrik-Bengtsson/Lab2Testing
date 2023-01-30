@@ -2,8 +2,9 @@ package com.example.stringcalculator;
 
 import org.junit.jupiter.api.Test;
 
-import static com.example.stringcalculator.StringCalculator.*;
+import static com.example.stringcalculator.StringCalculator.add;
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 public class StringCalculatorTest {
 
@@ -47,5 +48,10 @@ public class StringCalculatorTest {
     void shouldReturn5WithDifferentDelimiters() {
         int result = add("//;\\n2;3");
         assertThat(result).isEqualTo(5);
+    }
+
+    @Test
+    void shouldThrowExceptionIfEnteringNegativeNumber() {
+        assertThatThrownBy(() -> add("-1")).hasMessageContaining("Negatives not allowed [-1]");
     }
 }
