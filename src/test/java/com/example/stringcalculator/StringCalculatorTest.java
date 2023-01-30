@@ -65,4 +65,16 @@ public class StringCalculatorTest {
         int result = add("3,1000,2000,5");
         assertThat(result).isEqualTo(8);
     }
+
+    @Test
+    void testForDelimitersOfAnyLength() {
+        int result = add("//[***]\n1***2***3");
+        assertThat(result).isEqualTo(6);
+    }
+
+    @Test
+    void testForMultipleDelimitersInARow() {
+        int result = add("//[*][%]\\n1*2%3");
+        assertThat(result).isEqualTo(6);
+    }
 }
