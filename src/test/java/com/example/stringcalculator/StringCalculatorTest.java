@@ -59,4 +59,10 @@ public class StringCalculatorTest {
     void shouldThrowExceptionWithMultipleNegativeNumbers() {
         assertThatThrownBy(() -> add("-1,2,-3,-4")).hasMessageContaining("Negatives not allowed [-1, -3, -4]");
     }
+
+    @Test
+    void shouldIgnoreNumbersBiggerThanThreeDigits() {
+        int result = add("3,1000,2000,5");
+        assertThat(result).isEqualTo(8);
+    }
 }

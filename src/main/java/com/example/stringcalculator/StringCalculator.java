@@ -6,7 +6,7 @@ public class StringCalculator {
 
     public static int add(String numbers) {
         String[] strings = numbers.split("[^-\\d]");
-        var numberList = Arrays.stream(strings).filter(x -> x.matches("\\d+")).toList();
+        var numberList = Arrays.stream(strings).filter(x -> x.matches("\\d{1,3}")).toList();
         var negativeList = Arrays.stream(strings).filter(n -> n.matches("(-\\d+)")).toList();
         int result = 0;
 
