@@ -1,13 +1,21 @@
 package com.example.stringcalculator;
 
+import java.util.Arrays;
+
 public class StringCalculator {
+
     public static int add(String numbers) {
-        if(numbers.equals("1"))
-            return 1;
-        if(numbers.equals("1,2"))
-            return 3;
-        if(numbers.equals("4,5"))
-            return 9;
-        return 0;
+        String[] strings = numbers.split(",");
+        var numberList = Arrays.stream(strings).toList();
+        int result = 0;
+
+        if(numbers.isEmpty())
+            return 0;
+        else{
+            for (int i = 0; i < numberList.size(); i++) {
+                result = result + Integer.parseInt(numberList.get(i));
+            }
+            return result;
+        }
     }
 }
