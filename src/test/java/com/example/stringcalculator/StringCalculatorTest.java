@@ -35,4 +35,10 @@ public class StringCalculatorTest {
         int result = StringCalculator.add("3,4,5,6");
         assertThat(result).isEqualTo(18);
     }
+
+    @Test
+    void shouldReturn6WhenInputContainsNewLine() {
+        int result = StringCalculator.add("1\n2,3");
+        assertThat(result).isEqualTo(6);
+    }
 }

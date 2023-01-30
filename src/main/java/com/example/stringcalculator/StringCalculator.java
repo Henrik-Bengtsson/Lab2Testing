@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class StringCalculator {
 
     public static int add(String numbers) {
-        String[] strings = numbers.split(",");
+        String[] strings = numbers.split(",|\n");
         var numberList = Arrays.stream(strings).toList();
         int result = 0;
 
