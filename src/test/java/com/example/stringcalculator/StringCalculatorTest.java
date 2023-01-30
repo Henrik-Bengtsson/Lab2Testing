@@ -54,4 +54,9 @@ public class StringCalculatorTest {
     void shouldThrowExceptionIfEnteringNegativeNumber() {
         assertThatThrownBy(() -> add("-1")).hasMessageContaining("Negatives not allowed [-1]");
     }
+
+    @Test
+    void shouldThrowExceptionWithMultipleNegativeNumbers() {
+        assertThatThrownBy(() -> add("-1,2,-3,-4")).hasMessageContaining("Negatives not allowed [-1, -3, -4]");
+    }
 }
