@@ -41,4 +41,10 @@ public class StringCalculatorTest {
         int result = StringCalculator.add("1\n2,3");
         assertThat(result).isEqualTo(6);
     }
+
+    @Test
+    void shouldReturn5WithDifferentDelimiters() {
+        int result = StringCalculator.add("//;\\n2;3");
+        assertThat(result).isEqualTo(5);
+    }
 }
