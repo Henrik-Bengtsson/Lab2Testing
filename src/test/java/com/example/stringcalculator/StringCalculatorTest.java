@@ -77,4 +77,10 @@ public class StringCalculatorTest {
         int result = add("//[*][%]\\n1*2%3");
         assertThat(result).isEqualTo(6);
     }
+
+    @Test
+    void testForMultipleDelimitersAndAnyLength() {
+        int result = add("//[*****][%%%%]\\n1****2%%%%3");
+        assertThat(result).isEqualTo(6);
+    }
 }
