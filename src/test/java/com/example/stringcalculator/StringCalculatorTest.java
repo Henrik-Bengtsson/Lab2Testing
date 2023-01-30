@@ -29,4 +29,10 @@ public class StringCalculatorTest {
         int result = StringCalculator.add("4,5");
         assertThat(result).isEqualTo(9);
     }
+
+    @Test
+    void inputFourNumbersAndReturnSum18() {
+        int result = StringCalculator.add("3,4,5,6");
+        assertThat(result).isEqualTo(18);
+    }
 }
